@@ -51,9 +51,10 @@ $(document).ready(function(){
 
     function eratosthenes(x){
         if(x == notPrime){
+            var temp = primeList[count];
             count++;
-            if(Number.isSafeInteger(primeList[count] * primeList[count])){
-                notPrime = primeList[count] * primeList[count];
+            if(Number.isSafeInteger(temp * temp)){
+                notPrime = temp * temp;
             }
             return false;
         }
