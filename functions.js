@@ -38,9 +38,9 @@ $(document).ready(function(){
     }
 
     function newPrime(){
-        for(y = primeList[primeList.length - 1] + 2;;y += 2){
-            if(eratosthenes(y)){
-                return y;
+        for(x = primeList[primeList.length - 1] + 2;;x += 2){
+            if(eratosthenes(x)){
+                return x;
             }
         }
     }
