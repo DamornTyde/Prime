@@ -8,14 +8,14 @@ $(document).ready(function(){
     $(document).on("click", "button", function(){
         number = Number($("input").val());
         if(Number.isSafeInteger(number)){
+            var content = number + " = ";
             checkNumber(2);
             checkNumber(3);
             while(number > 1){
                 primeList.push(newPrime());
                 checkNumber(primeList[primeList.length - 1]);
             }
-            var content = "",
-            check = answer.length - 2;
+            var check = answer.length - 2;
             answer.forEach(function(item, i){
                 content += item.toLocaleString();
                 if(i <= check){
