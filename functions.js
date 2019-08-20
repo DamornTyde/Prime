@@ -6,7 +6,7 @@ $(document).ready(function(){
     $(document).on("click", "button", function(){
         number = Number($("input").val());
         if(Number.isSafeInteger(number)){
-            var content = number + " = ";
+            var content = number.toLocaleString() + " = ";
             checkNumber(2);
             checkNumber(3);
             while(number > 1){
