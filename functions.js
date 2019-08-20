@@ -29,7 +29,7 @@ $(document).ready(function(){
     });
 
     function checkNumber(item){
-        if(item * item > number){
+        if(number > 1 && item * item > number){
             answer.push(number);
             number = 1;
         } else {
