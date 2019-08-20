@@ -51,8 +51,8 @@ $(document).ready(function(){
     }
 
     function eratosthenes(x){
-        for(i = 0;; i++){
-            if(primeList[i] * primeList[i] > x){
+        for(i = 0;;i++){
+            if(Math.pow(primeList[i], 2) > x){
                 return true;
             }
             if(Number.isInteger(x / primeList[i])){
