@@ -1,8 +1,6 @@
 $(document).ready(function(){
     var primeList = [3],
     answer = [],
-    count = 0,
-    notPrime = 9,
     number;
 
     $(document).on("click", "button", function(){
@@ -24,20 +22,23 @@ $(document).ready(function(){
             });
             $("div").html(content);
             primeList.splice(1, primeList.length - 1);
-            answer.splice(0, answer.length);
-            count = 0;
-            notPrime = 9; 
+            answer.splice(0, answer.length); 
         } else {
             alert("The input is to high to calculate with!");
         }
     });
 
     function checkNumber(item){
-        var check = number / item;
-        if(Number.isInteger(check)){
-            number = check;
-            answer.push(item);
-            checkNumber(item);
+        if(item * item > number){
+            answer.push(number);
+            number = 1;
+        } else {
+            var check = number / item;
+            if(Number.isInteger(check)){
+                number = check;
+                answer.push(item);
+                checkNumber(item);
+            }
         }
     }
 
@@ -50,19 +51,13 @@ $(document).ready(function(){
     }
 
     function eratosthenes(x){
-        if(x == notPrime){
-            count++;
-            var temp = primeList[count] * primeList[count];
-            if(Number.isSafeInteger(temp)){
-                notPrime = temp;
+        for(i = 0;; i++){
+            if(primeList[i] * primeList[i] > x){
+                return true;
             }
-            return false;
-        }
-        for(i = 0; i < count; i++){
             if(Number.isInteger(x / primeList[i])){
                 return false;
             }
         }
-        return true;
     }
 });
