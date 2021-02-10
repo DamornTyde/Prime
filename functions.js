@@ -5,15 +5,15 @@ document.getElementById("submit").addEventListener("click", function () {
     if (Number.isSafeInteger(input) && input > 1) {
         const answer = calc(input);
         const output = document.createDocumentFragment();
-        output.appendChild(document.createTextNode(`${input} = `));
+        output.appendChild(document.createTextNode(`${input.toLocaleString()} = `));
         var i = 0;
         while (true) {
             const x = answer[i];
-            output.appendChild(document.createTextNode(x));
+            output.appendChild(document.createTextNode(x.toLocaleString()));
             const y = answer.filter(z => z == x).length;
             if (y > 1) {
                 const sup = document.createElement("sup");
-                sup.appendChild(document.createTextNode(y));
+                sup.appendChild(document.createTextNode(y.toLocaleString()));
                 output.appendChild(sup);
             }
             i += y;
