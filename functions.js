@@ -4,7 +4,7 @@ document.getElementById("submit").addEventListener("click", function () {
     const input = Number(document.getElementById("input").value);
     if (Number.isSafeInteger(input) && input > 1) {
         const answer = calc(input);
-        const output = document.createElement("p");
+        const output = document.createDocumentFragment();
         output.appendChild(document.createTextNode(`${input} = `));
         var i = 0;
         while (true) {
