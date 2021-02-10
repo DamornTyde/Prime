@@ -56,7 +56,7 @@ function newPrime() {
 }
 
 function eratosthenes(x) {
-    for (var i = 0;; i++) {
+    for (var i in primes) {
         if(Math.pow(primes[i], 2) > x) {
             return true;
         } else if (x % primes[i] == 0) {
