@@ -1,5 +1,7 @@
 var primes;
 
+document.getElementById("input").setAttribute("max", Number.MAX_SAFE_INTEGER);
+
 document.getElementById("submit").addEventListener("click", function () {
     const input = Number(document.getElementById("input").value);
     if (Number.isSafeInteger(input) && input > 1) {
