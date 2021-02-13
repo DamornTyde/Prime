@@ -36,7 +36,7 @@ document.getElementById("submit").addEventListener("click", function () {
 
 function calc(input) {
     const answer = [];
-    primes = [2];
+    primes = [];
     lastPrime = 2;
     while (true) {
         if (Math.pow(lastPrime, 2) > input) {
@@ -62,6 +62,9 @@ function newPrime() {
 }
 
 function eratosthenes(x) {
+    if (primes.length == 0) {
+        return true;
+    }
     for (let i = 0;; i++) {
         if(Math.pow(primes[i], 2) > x) {
             return true;
