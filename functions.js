@@ -25,13 +25,11 @@ document.getElementById("submit").addEventListener("click", function () {
                 print.innerHTML = "";
                 print.appendChild(output);
                 return;
-            } else {
-                output.appendChild(document.createTextNode(" * "));
             }
+            output.appendChild(document.createTextNode(" * "));
         }
-    } else {
-        alert("Invalid input!");
     }
+    alert("Invalid input!");
 });
 
 function calc(input) {
