@@ -39,7 +39,7 @@ function calc(input) {
     primes = [];
     lastPrime = 2;
     while (true) {
-        if (Math.pow(lastPrime, 2) > input) {
+        if (lastPrime * lastPrime > input) {
             answer.push(input);
             return answer;
         }
@@ -66,7 +66,7 @@ function eratosthenes(x) {
         return true;
     }
     for (let i = 0;; i++) {
-        if(Math.pow(primes[i], 2) > x) {
+        if(primes[i] * primes[i] > x) {
             return true;
         } else if (x % primes[i] == 0) {
             return false;
