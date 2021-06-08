@@ -3,6 +3,28 @@ let lastPrime;
 
 document.getElementById("input").setAttribute("max", Number.MAX_SAFE_INTEGER);
 
+document.addEventListener("keydown", function(e) {
+    const x = e.key;
+    switch(x) {
+        case "ArrowUp":
+            setInput(1);
+            break
+        case "ArrowDown":
+            setInput(-1);
+            break
+        case "Enter":
+            document.getElementById("submit").click();
+    }
+});
+
+function setInput(x) {
+    const field = document.getElementById("input")
+    const i = Number(field.value) + x;
+    if (Number.isSafeInteger(i) && i > 1) {
+        field.value = i;
+    }
+}
+
 document.getElementById("submit").addEventListener("click", function () {
     const input = Number(document.getElementById("input").value);
     if (Number.isSafeInteger(input) && input > 1) {
