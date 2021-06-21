@@ -4,8 +4,7 @@ let lastPrime;
 document.getElementById("input").setAttribute("max", Number.MAX_SAFE_INTEGER);
 
 document.addEventListener("keydown", function(e) {
-    const x = e.key;
-    switch(x) {
+    switch(e.key) {
         case "ArrowUp":
             setInput(1);
             break
@@ -18,10 +17,12 @@ document.addEventListener("keydown", function(e) {
 });
 
 function setInput(x) {
-    const field = document.getElementById("input")
-    const i = Number(field.value) + x;
-    if (Number.isSafeInteger(i) && i > 1) {
-        field.value = i;
+    if(document.activeElement.id != "input") {
+        const field = document.getElementById("input")
+        const i = Number(field.value) + x;
+        if (Number.isSafeInteger(i) && i > 1) {
+            field.value = i;
+        }
     }
 }
 
